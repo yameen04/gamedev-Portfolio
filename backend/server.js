@@ -6,14 +6,15 @@ const path = require('path');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
+require('dotenv').config(); // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // --- CONFIGURATION ---
 
-// 1. MongoDB Connection
-const MONGO_URI = 'mongodb+srv://admin:BandwidthBus1@portfolio.cgkqmxe.mongodb.net/?retryWrites=true&w=majority&appName=Portfolio';
+// 1. MongoDB Connection - Using Environment Variable
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
 
 mongoose.connect(MONGO_URI)
     .then(() => console.log('✅ MongoDB Connected'))
