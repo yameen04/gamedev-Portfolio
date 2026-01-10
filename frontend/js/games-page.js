@@ -11,7 +11,7 @@ export class GamesPageController {
 
     async loadSettings() {
         try {
-            const response = await fetch('http://localhost:3000/api/settings');
+            const response = await fetch('/api/settings');
             const data = await response.json();
 
             if (data && data.gamesPage && data.gamesPage.sections) {

@@ -49,7 +49,7 @@ export class HeaderController {
 
     async loadSettings() {
         try {
-            const response = await fetch('http://localhost:3000/api/settings');
+            const response = await fetch('/api/settings');
             const data = await response.json();
             if (data && data.header) {
                 this.applySettings(data.header);
