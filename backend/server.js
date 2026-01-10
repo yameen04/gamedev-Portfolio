@@ -42,7 +42,13 @@ const upload = multer({ storage: storage });
 // --- MIDDLEWARE ---
 app.use(cors());
 app.use(bodyParser.json());
+// 4. Serve static files from frontend folder
 app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Serve index.html for root path
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
 
 
 // --- DATABASE SCHEMAS ---
