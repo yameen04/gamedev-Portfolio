@@ -94,3 +94,71 @@
     margin-top: 10px;
     color: #fff;
 }
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .featured-heading {
+        font-size: 2rem;
+    }
+
+    .product-display {
+        max-width: 500px;
+        margin-left: 40px;
+    }
+
+    .featured-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .featured-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-display {
+        max-width: 400px;
+        margin-left: 0;
+    }
+
+    .featured-heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #featured-section {
+        padding: 20px;
+    }
+
+    .featured-heading {
+        font-size: 1.5rem;
+        left: 20px;
+        top: 20px;
+    }
+
+    .product-display {
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .product-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-heading {
+        font-size: 1.2rem;
+    }
+
+    .product-display {
+        max-width: 250px;
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 1rem;
+    }
+}

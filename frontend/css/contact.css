@@ -169,3 +169,113 @@
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .contact-heading {
+        font-size: 2rem;
+    }
+
+    .profile-pic {
+        width: 300px;
+        height: 300px;
+    }
+
+    .profile-desc {
+        margin-left: 150px;
+        font-size: 1rem;
+    }
+
+    .contact-buttons {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+        margin-top: 20px;
+    }
+
+    .profile-desc {
+        margin-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .contact-buttons {
+        margin-left: 0;
+    }
+
+    .contact-heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact-section {
+        padding: 40px 20px 100px 20px;
+    }
+
+    .contact-heading {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-desc {
+        font-size: 0.9rem;
+    }
+
+    .buttons-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .btn-github {
+        padding: 12px 30px;
+        font-size: 1rem;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-heading {
+        font-size: 1.2rem;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-desc {
+        font-size: 0.8rem;
+    }
+
+    .contact-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .btn-github {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        min-width: 150px;
+    }
+}

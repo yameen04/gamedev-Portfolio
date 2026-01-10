@@ -87,3 +87,71 @@
     margin-top: 10px;
     color: #fff;
 }
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+    .games-heading {
+        font-size: 2rem;
+    }
+
+    .games-product-display {
+        max-width: 500px;
+        margin-right: 40px;
+    }
+
+    .games-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .games-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .games-product-display {
+        max-width: 400px;
+        margin-right: 0;
+    }
+
+    .games-heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #games-section {
+        padding: 20px;
+    }
+
+    .games-heading {
+        font-size: 1.5rem;
+        left: 20px;
+        top: 20px;
+    }
+
+    .games-product-display {
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .games-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-heading {
+        font-size: 1.2rem;
+    }
+
+    .games-product-display {
+        max-width: 250px;
+        padding: 10px;
+    }
+
+    .games-title {
+        font-size: 1rem;
+    }
+}
