@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets - Yameen's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/assets-page.css"> <!-- Assets specific CSS -->
+</head>
+
+<body>
+
+    <!-- Header (Shared) -->
+    <header id="main-header">
+        <div class="header-left">
+            <div class="logo">MY LOGO</div> <!-- header.js will populate this -->
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="games.html">GAMES</a>
+                <a href="assets.html" class="active">ASSETS</a>
+                <a href="index.html#contact-section">CONTACT</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="dev-name">DEV NAME</div>
+        </div>
+    </header>
+
+    <!-- Main Container for 5 Sections -->
+    <div id="assets-page-container">
+
+        <!-- Section 1 -->
+        <section id="assets-section-1" class="assets-section" data-index="0">
+            <!-- Background injected by JS -->
+            <div class="assets-section-content">
+                <!-- Main Page Heading -->
+                <h1 class="main-page-title"
+                    style="text-align: center; margin-bottom: 60px; font-size: 5rem; text-transform: uppercase; margin-top: 60px; text-shadow: 4px 4px 0 #000;">
+                    ASSETS</h1>
+
+                <div class="projects-grid" style="align-self: center;">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="assets-section-2" class="assets-section" data-index="1">
+            <div class="assets-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="assets-section-3" class="assets-section" data-index="2">
+            <div class="assets-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="assets-section-4" class="assets-section" data-index="3">
+            <div class="assets-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="assets-section-5" class="assets-section" data-index="4">
+            <div class="assets-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="js/assets-page.js" type="module"></script>
+    <script src="js/header.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Login */
+#login-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-box input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error-msg {
+    color: #ff4d4d;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Dashboard */
+.hidden {
+    display: none !important;
+}
+
+.admin-header {
+    background-color: #1e1e1e;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.panel {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    background-color: #2c2c2c;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.form-group input[type="color"] {
+    width: 100%;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.save-btn:hover {
+    background-color: #45a049;
+}
+
+.button-settings-group {
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.button-settings-group h4 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* 2-Column Grid for Projects Panel */
+.admin-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.project-list-container {
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 4px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.project-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.project-info {
+    flex-grow: 1;
+}
+
+.project-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+.project-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+    background-color: #e60000;
+}

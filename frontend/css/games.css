@@ -1,0 +1,89 @@
+#games-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 40px;
+}
+
+/* Background Layer */
+.games-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* Header consistent with Featured */
+.games-heading {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 2;
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.games-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 40px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.games-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.games-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Card Styles - Match Featured */
+.games-product-display {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    aspect-ratio: 1 / 1;
+    /* SQUARE - matches Featured */
+    max-width: 600px;
+    /* Same as Featured */
+    margin-right: 80px;
+    /* Same padding as Featured card's left margin */
+}
+
+.games-media-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.games-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #fff;
+}

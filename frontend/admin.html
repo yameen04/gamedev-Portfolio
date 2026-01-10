@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - GameDev Portfolio</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- Login Section -->
+    <section id="login-section" class="hidden">
+        <div class="login-container">
+            <h1>Admin Login</h1>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Dashboard Section (Hidden by default) -->
+    <section id="dashboard-section" class="hidden">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+
+        <div class="admin-grid">
+            <!-- Header Settings Panel -->
+            <div class="panel">
+                <h2>Header Settings</h2>
+
+                <!-- Logo Upload -->
+                <div class="form-group">
+                    <label>Logo Image (Overrides Text)</label>
+                    <input type="file" id="header-logo-upload">
+                    <button type="button" id="upload-logo-btn">Upload Logo</button>
+                    <small>Current: <span id="current-logo-url">None</span></small>
+                </div>
+
+                <form id="header-settings-form">
+                    <div class="form-group">
+                        <label>Logo Text (Fallback)</label>
+                        <input type="text" name="logoText">
+                    </div>
+                    <div class="form-group">
+                        <label>Link Spacing (px)</label>
+                        <input type="number" name="linkSpacing" placeholder="e.g. 20">
+                    </div>
+                    <div class="form-group">
+                        <label>Logo Height (px)</label>
+                        <input type="number" name="logoHeight" placeholder="Default: 50">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Developer Name</label>
+                            <input type="text" name="nameText">
+                        </div>
+                        <div class="form-group">
+                            <label>Font Family</label>
+                            <select name="fontFamily">
+                                <option value="'Press Start 2P', cursive">Arcade Classic (Press Start 2P)</option>
+                                <option value="'Inter', sans-serif">Inter</option>
+                                <option value="'Arial', sans-serif">Arial</option>
+                                <option value="'Times New Roman', serif">Times New Roman</option>
+                                <option value="'Courier New', monospace">Courier New</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Background Color</label>
+                            <input type="color" name="backgroundColor">
+                        </div>
+                        <div class="form-group">
+                            <label>Text Color</label>
+                            <input type="color" name="textColor">
+                        </div>
+                        <button type="submit" class="save-btn">Save Header Settings</button>
+                </form>
+            </div>
+
+            <!-- Banner Settings Panel -->
+            <div class="panel">
+                <h2>Banner Settings</h2>
+
+                <!-- Media Upload -->
+                <div class="form-group">
+                    <label>Banner Media (Image/Video)</label>
+                    <input type="file" id="banner-media-upload">
+                    <button type="button" id="upload-media-btn">Upload from PC</button>
+                    <small>Current: <span id="current-media-url">None</span></small>
+                </div>
+
+                <form id="banner-settings-form">
+                    <div class="form-group">
+                        <label>Banner Title</label>
+                        <input type="text" name="title">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Button Spacing (px)</label>
+                        <input type="number" name="buttonSpacing" placeholder="e.g. 20">
+                    </div>
+
+                    <h3>Buttons</h3>
+                    <div class="button-settings-group">
+                        <h4>"Games" Button</h4>
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" name="buttonGamesText">
+                        </div>
+                        <div class="form-group">
+                            <label>Text Color</label>
+                            <input type="color" name="buttonGamesColor">
+                        </div>
+                        <div class="form-group">
+                            <label>Background Color</label>
+                            <input type="color" name="buttonGamesBg">
+                        </div>
+                    </div>
+
+                    <div class="button-settings-group">
+                        <h4>"Assets" Button</h4>
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" name="buttonAssetsText">
+                        </div>
+                        <div class="form-group">
+                            <label>Text Color</label>
+                            <input type="color" name="buttonAssetsColor">
+                        </div>
+                        <div class="form-group">
+                            <label>Background Color</label>
+                            <input type="color" name="buttonAssetsBg">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="save-btn">Save Banner Settings</button>
+                </form>
+            </div>
+
+            <!-- Featured Project Settings Panel -->
+            <div class="panel">
+                <h2>Featured Project Settings</h2>
+
+                <!-- Media Upload -->
+                <div class="form-group">
+                    <label>Section Background (Image/Video)</label>
+                    <input type="file" id="featured-media-upload">
+                    <button type="button" id="upload-featured-media-btn">Upload Background</button>
+                    <small>Current: <span id="current-featured-media-url">None</span></small>
+                </div>
+
+                <form id="featured-settings-form">
+                    <div class="form-group">
+                        <label>Select Project to Feature</label>
+                        <select name="selectedProjectId" id="featured-project-select">
+                            <option value="">-- Select a Game Project --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Section Heading</label>
+                        <input type="text" name="sectionTitle" placeholder="Featured Project">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Title</label>
+                        <input type="text" name="projectTitle" placeholder="My Awesome Game">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card Width (e.g. 100%, 500px)</label>
+                        <input type="text" name="projectCardWidth" placeholder="Default: 100%">
+                    </div>
+                    <div class="form-group">
+                        <label>Image Height (px)</label>
+                        <input type="number" name="projectImageHeight" placeholder="Default: 300">
+                    </div>
+                    <div class="form-group">
+                        <label>Content Gap (px)</label>
+                        <input type="number" name="sectionGap" placeholder="Default: 40">
+                    </div>
+                    <div class="form-group">
+                        <label>Cube Size (px)</label>
+                        <input type="number" name="cubeSize" placeholder="Default: 200">
+                    </div>
+                    <div class="form-group">
+                        <label>Letterbox Color (Bars on sides of image)</label>
+                        <input type="color" name="letterboxColor" value="#000000">
+                    </div>
+
+                    <button type="submit" class="save-btn">Save Featured Settings</button>
+                </form>
+            </div>
+
+            <!-- Games Section Settings Panel (Home Page) -->
+            <div class="panel">
+                <h2>Games Section Settings (Home Page)</h2>
+
+                <!-- Media Upload -->
+                <div class="form-group">
+                    <label>Section Background (Image/Video)</label>
+                    <input type="file" id="games-media-upload">
+                    <button type="button" id="upload-games-media-btn">Upload Background</button>
+                    <small>Current: <span id="current-games-media-url">None</span></small>
+                </div>
+
+                <form id="games-settings-form">
+                    <div class="form-group">
+                        <label>Select Game to Display</label>
+                        <select name="selectedProjectId" id="games-project-select">
+                            <option value="">-- Select a Game Project --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Section Heading</label>
+                        <input type="text" name="sectionTitle" placeholder="Default: Games">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Title</label>
+                        <input type="text" name="projectTitle" placeholder="My Awesome Game">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card Width (e.g. 100%, 500px)</label>
+                        <input type="text" name="projectCardWidth" placeholder="Default: 100%">
+                    </div>
+                    <div class="form-group">
+                        <label>Image Height (px)</label>
+                        <input type="number" name="projectImageHeight" placeholder="Default: 300">
+                    </div>
+                    <div class="form-group">
+                        <label>Content Gap (px)</label>
+                        <input type="number" name="sectionGap" placeholder="Default: 40">
+                    </div>
+                    <div class="form-group">
+                        <label>Cube Size (px)</label>
+                        <input type="number" name="cubeSize" placeholder="Default: 200">
+                    </div>
+                    <div class="form-group">
+                        <label>Letterbox Color (Bars on sides of image)</label>
+                        <input type="color" name="letterboxColor" value="#000000">
+                    </div>
+
+                    <button type="submit" class="save-btn">Save Games Settings</button>
+                </form>
+            </div>
+
+            <!-- NEW: Assets Section Settings (Home Page) -->
+            <div class="panel">
+                <h2>Assets Section Settings (Home Page)</h2>
+
+                <!-- Media Upload -->
+                <div class="form-group">
+                    <label>Section Background (Image/Video)</label>
+                    <input type="file" id="assets-media-upload">
+                    <button type="button" id="upload-assets-media-btn">Upload Background</button>
+                    <small>Current: <span id="current-assets-media-url">None</span></small>
+                </div>
+
+                <form id="assets-settings-form">
+                    <div class="form-group">
+                        <label>Select Asset to Display</label>
+                        <select name="selectedProjectId" id="assets-project-select">
+                            <option value="">-- Select an Asset Project --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Section Heading</label>
+                        <input type="text" name="sectionTitle" placeholder="Default: Assets">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Title</label>
+                        <input type="text" name="projectTitle" placeholder="My Awesome Asset">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card Width (e.g. 100%, 500px)</label>
+                        <input type="text" name="projectCardWidth" placeholder="Default: 100%">
+                    </div>
+                    <div class="form-group">
+                        <label>Image Height (px)</label>
+                        <input type="number" name="projectImageHeight" placeholder="Default: 300">
+                    </div>
+                    <div class="form-group">
+                        <label>Content Gap (px)</label>
+                        <input type="number" name="sectionGap" placeholder="Default: 40">
+                    </div>
+                    <div class="form-group">
+                        <label>Cube Size (px)</label>
+                        <input type="number" name="cubeSize" placeholder="Default: 200">
+                    </div>
+                    <div class="form-group">
+                        <label>Letterbox Color (Bars on sides of image)</label>
+                        <input type="color" name="letterboxColor" value="#000000">
+                    </div>
+
+                    <button type="submit" class="save-btn">Save Assets Settings</button>
+                </form>
+            </div>
+
+            <!-- NEW: Games Page Settings (5 Sections) -->
+            <div class="panel">
+                <h2>Games Page Settings</h2>
+                <p>Upload backgrounds for the 5 separate sections.</p>
+
+                <div id="games-page-settings-container">
+                    <!-- Javascript will render 5 identical upload blocks here, or we hardcode them -->
+                    <!-- Hardcoding for simplicity and clarity -->
+
+                    <div class="section-upload-block">
+                        <h3>Section 1</h3>
+                        <div class="form-group">
+                            <input type="file" id="games-page-bg-1">
+                            <button type="button" class="upload-games-page-bg-btn" data-index="1">Upload BG 1</button>
+                            <small>Current: <span id="games-page-bg-1-url">None</span></small>
+                        </div>
+                    </div>
+
+                    <div class="section-upload-block">
+                        <h3>Section 2</h3>
+                        <div class="form-group">
+                            <input type="file" id="games-page-bg-2">
+                            <button type="button" class="upload-games-page-bg-btn" data-index="2">Upload BG 2</button>
+                            <small>Current: <span id="games-page-bg-2-url">None</span></small>
+                        </div>
+                    </div>
+
+                    <div class="section-upload-block">
+                        <h3>Section 3</h3>
+                        <div class="form-group">
+                            <input type="file" id="games-page-bg-3">
+                            <button type="button" class="upload-games-page-bg-btn" data-index="3">Upload BG 3</button>
+                            <small>Current: <span id="games-page-bg-3-url">None</span></small>
+                        </div>
+                    </div>
+
+                    <div class="section-upload-block">
+                        <h3>Section 4</h3>
+                        <div class="form-group">
+                            <input type="file" id="games-page-bg-4">
+                            <button type="button" class="upload-games-page-bg-btn" data-index="4">Upload BG 4</button>
+                            <small>Current: <span id="games-page-bg-4-url">None</span></small>
+                        </div>
+                    </div>
+
+                    <div class="section-upload-block">
+                        <h3>Section 5</h3>
+                        <div class="form-group">
+                            <input type="file" id="games-page-bg-5">
+                            <button type="button" class="upload-games-page-bg-btn" data-index="5">Upload BG 5</button>
+                            <small>Current: <span id="games-page-bg-5-url">None</span></small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Manage Game Projects Panel -->
+        <div class="panel">
+            <h2>Manage Game Projects</h2>
+
+            <div class="admin-grid-2col">
+                <!-- Add Project Form -->
+                <div class="form-section">
+                    <h3 id="add-project-heading">Add New Project</h3>
+                    <form id="add-project-form">
+                        <input type="hidden" name="id" id="project-id-input">
+                        <div class="form-group">
+                            <label>Project Image</label>
+                            <input type="file" name="image">
+                            <small>Leave empty to keep existing image when editing</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Title</label>
+                            <input type="text" name="title" required placeholder="e.g. Space Shooter">
+                        </div>
+                        <div class="form-group">
+                            <label>Section (1-5)</label>
+                            <select name="sectionIndex" required>
+                                <option value="1">Section 1</option>
+                                <option value="2">Section 2</option>
+                                <option value="3">Section 3</option>
+                                <option value="4">Section 4</option>
+                                <option value="5">Section 5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" required rows="3"
+                                placeholder="Short description..."></textarea>
+                        </div>
+                        <button type="submit" class="save-btn" id="project-submit-btn">Add Project</button>
+                        <button type="button" id="cancel-edit-btn" class="save-btn"
+                            style="background-color: #666; display: none; margin-top: 10px;">Cancel Edit</button>
+                    </form>
+                </div>
+
+                <!-- Project List -->
+                <div class="list-section">
+                    <h3>Your Projects</h3>
+                    <div id="project-list-container" class="project-list-container">
+                        <!-- JS will inject items here -->
+                        <p class="empty-msg">No projects yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Assets Page Settings Panel (Mirroring Games Page) -->
+        <div class="panel">
+            <h2>Assets Page Settings</h2>
+            <p style="margin-bottom: 15px; color: #aaa;">Configure the dedicated Assets Page (Logo, Titles,
+                Backgrounds).</p>
+
+            <form id="assets-page-general-form" class="header-settings-form">
+                <div class="form-group">
+                    <label>Asset Page Logo (Upload)</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="file" id="assets-page-logo-upload">
+                        <button type="button" id="upload-assets-page-logo-btn">Upload Logo</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Page Title (Overrides "ASSETS")</label>
+                    <input type="text" name="pageTitle" placeholder="e.g. My 3D Assets">
+                </div>
+
+                <div class="form-group">
+                    <label>Developer Name (Overrides Global)</label>
+                    <input type="text" name="developerName" placeholder="e.g. Yameen Assets">
+                </div>
+
+                <div class="form-group">
+                    <label>Logo Height (px)</label>
+                    <input type="number" name="logoHeight" placeholder="Default: 40">
+                </div>
+
+                <button type="submit" class="save-btn">Save Assets General Settings</button>
+            </form>
+
+            <h3 style="margin-top: 30px; border-top: 1px solid #444; padding-top: 20px;">Section Backgrounds</h3>
+            <div id="assets-page-settings-container" class="admin-grid-2col">
+                <!-- 5 Section Uploads -->
+                <div class="section-upload-block">
+                    <h3>Section 1</h3>
+                    <div class="form-group">
+                        <input type="file" id="assets-page-bg-1">
+                        <button type="button" class="upload-assets-page-bg-btn" data-index="1">Upload BG 1</button>
+                        <small>Current: <span id="assets-page-bg-1-url">None</span></small>
+                    </div>
+                </div>
+
+                <div class="section-upload-block">
+                    <h3>Section 2</h3>
+                    <div class="form-group">
+                        <input type="file" id="assets-page-bg-2">
+                        <button type="button" class="upload-assets-page-bg-btn" data-index="2">Upload BG 2</button>
+                        <small>Current: <span id="assets-page-bg-2-url">None</span></small>
+                    </div>
+                </div>
+
+                <div class="section-upload-block">
+                    <h3>Section 3</h3>
+                    <div class="form-group">
+                        <input type="file" id="assets-page-bg-3">
+                        <button type="button" class="upload-assets-page-bg-btn" data-index="3">Upload BG 3</button>
+                        <small>Current: <span id="assets-page-bg-3-url">None</span></small>
+                    </div>
+                </div>
+
+                <div class="section-upload-block">
+                    <h3>Section 4</h3>
+                    <div class="form-group">
+                        <input type="file" id="assets-page-bg-4">
+                        <button type="button" class="upload-assets-page-bg-btn" data-index="4">Upload BG 4</button>
+                        <small>Current: <span id="assets-page-bg-4-url">None</span></small>
+                    </div>
+                </div>
+
+                <div class="section-upload-block">
+                    <h3>Section 5</h3>
+                    <div class="form-group">
+                        <input type="file" id="assets-page-bg-5">
+                        <button type="button" class="upload-assets-page-bg-btn" data-index="5">Upload BG 5</button>
+                        <small>Current: <span id="assets-page-bg-5-url">None</span></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Manage Asset Projects Panel -->
+        <div class="panel">
+            <h2>Manage Asset Projects</h2>
+
+            <div class="admin-grid-2col">
+                <!-- Add Asset Form -->
+                <div class="form-section">
+                    <h3 id="add-asset-heading">Add New Asset</h3>
+                    <form id="add-asset-form">
+                        <input type="hidden" name="id" id="asset-id-input">
+                        <div class="form-group">
+                            <label>Asset Image</label>
+                            <input type="file" name="image">
+                            <small>Leave empty to keep existing image when editing</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Asset Title</label>
+                            <input type="text" name="title" required placeholder="e.g. Sci-Fi Crate">
+                        </div>
+                        <div class="form-group">
+                            <label>Section (1-5)</label>
+                            <select name="sectionIndex" required>
+                                <option value="1">Section 1</option>
+                                <option value="2">Section 2</option>
+                                <option value="3">Section 3</option>
+                                <option value="4">Section 4</option>
+                                <option value="5">Section 5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" required rows="3"
+                                placeholder="Short description..."></textarea>
+                        </div>
+                        <button type="submit" class="save-btn" id="asset-submit-btn">Add Asset</button>
+                        <button type="button" id="cancel-asset-edit-btn" class="save-btn"
+                            style="background-color: #666; display: none; margin-top: 10px;">Cancel Edit</button>
+                    </form>
+                </div>
+
+                <!-- Asset List -->
+                <div class="list-section">
+                    <h3>Your Assets</h3>
+                    <div id="asset-list-container" class="project-list-container">
+                        <!-- JS will inject items here -->
+                        <p class="empty-msg">No assets yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section Settings Panel -->
+        <div class="panel">
+            <h2>Contact Section Settings</h2>
+
+            <!-- Background Upload -->
+            <div class="form-group">
+                <label>Section Background (Image/Video)</label>
+                <input type="file" id="contact-bg-upload">
+                <button type="button" id="upload-contact-bg-btn">Upload Background</button>
+                <small>Current: <span id="current-contact-bg-url">None</span></small>
+            </div>
+
+            <!-- Profile Pic Upload -->
+            <div class="form-group">
+                <label>Profile Picture (Image)</label>
+                <input type="file" id="contact-profile-upload">
+                <button type="button" id="upload-contact-profile-btn">Upload Profile Pic</button>
+                <small>Current: <span id="current-contact-profile-url">None</span></small>
+            </div>
+
+            <form id="contact-settings-form">
+                <div class="form-group">
+                    <label>Section Heading</label>
+                    <input type="text" name="sectionTitle" placeholder="Default: Contact">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" rows="5" placeholder="Tell us about yourself..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Spacing (Pic & Text)</label>
+                    <input type="number" name="contentGap" placeholder="Default: 50">
+                </div>
+
+                <div class="form-group">
+                    <label>Image Left Margin</label>
+                    <input type="number" name="leftMargin" placeholder="Default: 100">
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>LinkedIn URL</label>
+                    <input type="text" name="linkedinUrl" placeholder="https://linkedin.com/in/...">
+                </div>
+
+                <div class="form-group">
+                    <label>GitHub URL</label>
+                    <input type="text" name="githubUrl" placeholder="https://github.com/...">
+                    <small>This controls the "Connect ON GITHUB" button.</small>
+                </div>
+
+                <button type="submit" class="save-btn">Save Contact Settings</button>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script type="module" src="js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Yameen's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/games-page.css"> <!-- New CSS -->
+</head>
+
+<body>
+
+    <!-- Header (Shared) -->
+    <header id="main-header">
+        <div class="header-left">
+            <div class="logo">MY LOGO</div> <!-- header.js will populate this -->
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="games.html" class="active">GAMES</a>
+                <a href="assets.html">ASSETS</a>
+                <a href="index.html#contact-section">CONTACT</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="dev-name">DEV NAME</div>
+        </div>
+    </header>
+
+    <!-- Main Container for 5 Sections -->
+    <div id="games-page-container">
+
+        <!-- Section 1 -->
+        <section id="games-section-1" class="games-section" data-index="0">
+            <!-- Background injected by JS -->
+            <div class="games-section-content">
+                <!-- Main Page Heading Moved Here to sit on top of BG -->
+                <h1 class="main-page-title"
+                    style="text-align: center; margin-bottom: 60px; font-size: 5rem; text-transform: uppercase; margin-top: 60px; text-shadow: 4px 4px 0 #000;">
+                    GAMES</h1>
+
+                <div class="projects-grid" style="align-self: center;">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="games-section-2" class="games-section" data-index="1">
+            <div class="games-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="games-section-3" class="games-section" data-index="2">
+            <div class="games-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="games-section-4" class="games-section" data-index="3">
+            <div class="games-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="games-section-5" class="games-section" data-index="4">
+            <div class="games-section-content">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="js/games-page.js" type="module"></script>
+    <script src="js/header.js"></script>
+</body>
+
+</html>

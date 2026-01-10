@@ -1,0 +1,128 @@
+/* Global Page Styles */
+body {
+    background-color: #050505;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+}
+
+#project-detail-container {
+    position: relative;
+    z-index: 10;
+    /* Above background */
+    padding: 120px 5% 50px 5%;
+    /* Top padding for header */
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left align everything as requested */
+}
+
+/* Background Container (Behind Content) */
+#project-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    /* Use min-height to allow expansion */
+    z-index: 0;
+}
+
+.project-bg-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Keeps the visual scale of sections */
+    overflow: hidden;
+}
+
+.project-bg-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    /* Dimmed for readability */
+}
+
+/* 1. Title (Top Left) */
+#project-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 0 #000;
+    line-height: 1.4;
+    max-width: 1000px;
+    /* Match image width */
+}
+
+/* 2. Image (Below Title) */
+#project-image-container {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000000;
+}
+
+/* 3. Description (Below Image) */
+#project-description-container {
+    width: 100%;
+    max-width: 1000px;
+    /* Matched image width for consistency */
+}
+
+.description-heading {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.8rem;
+    color: #fff;
+    /* White as requested */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+#project-description {
+    font-family: 'Press Start 2P', cursive;
+    /* Arcade font */
+    font-size: 1.0rem;
+    /* Adjusted for arcade font readability */
+    line-height: 2.0;
+    color: #fff;
+    white-space: pre-wrap;
+    /* Preserve newlines from input */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #project-title {
+        font-size: 2rem;
+    }
+
+    #project-image-container {
+        aspect-ratio: 4 / 3;
+        /* Taller on mobile might be better, or keep 16/9 */
+    }
+}

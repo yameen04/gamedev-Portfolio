@@ -1,0 +1,171 @@
+#contact-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    padding: 60px 40px 150px 40px;
+    /* Increased bottom padding */
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #fff;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Media */
+.contact-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: 0;
+}
+
+/* Heading top-left */
+.contact-heading {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+/* Main Content Container */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left align items */
+    width: 100%;
+    max-width: 95%;
+    /* Increased from 1200px to allow more width */
+    margin-left: 0;
+    /* Handled by JS */
+    gap: 60px;
+    /* Space between Profile Area and Buttons */
+}
+
+/* Profile Area (Pic + Desc) */
+.profile-area {
+    display: flex;
+    align-items: center;
+    /* Vertically center image and text */
+    width: 100%;
+    /* gap is handled by JS settings */
+}
+
+.profile-pic-container {
+    flex: 0 0 auto;
+}
+
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    margin-top: 50px;
+}
+
+.profile-desc {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Press Start 2P', cursive;
+    color: #ddd;
+    max-width: none;
+    /* Allow text to stretch fully */
+    margin-left: 220px;
+    /* Prevent text from spanning too wide */
+}
+
+/* Buttons Area */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align buttons to the left (matching content) or center? */
+    align-items: center;
+    width: 100%;
+    margin-left: 250px;
+    margin-bottom: -50px;
+}
+
+.buttons-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Banner-style buttons */
+.contact-btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-email {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-linkedin {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+/* GitHub Split Button */
+.btn-github {
+    background: linear-gradient(90deg, #000 50%, #fff 50%);
+    border: 2px solid #fff;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    min-width: 250px;
+}
+
+.btn-github span {
+    color: #fff;
+    mix-blend-mode: difference;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.btn-github:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
