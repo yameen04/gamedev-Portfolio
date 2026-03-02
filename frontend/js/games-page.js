@@ -11,7 +11,7 @@ export class GamesPageController {
 
     async loadSettings() {
         try {
-            const response = await fetch('/api/settings');
+            const response = await fetch('https://gamedev-portfolio-l7d3.onrender.com/api/settings');
             const data = await response.json();
 
             if (data && data.gamesPage && data.gamesPage.sections) {

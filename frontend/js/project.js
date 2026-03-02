@@ -22,7 +22,7 @@ export class ProjectDetailController {
 
     async loadProject(id, type) {
         try {
-            const response = await fetch('/api/settings');
+            const response = await fetch('https://gamedev-portfolio-l7d3.onrender.com/api/settings');
             const data = await response.json();
 
             let projects = [];
